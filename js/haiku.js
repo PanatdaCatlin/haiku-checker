@@ -24,6 +24,10 @@ export class Haiku{
       {
         vowelCount -= 1;
       }
+      if(word.endsWith("ee"))
+      {
+        vowelCount += 1;
+      }
       if(word.includes("ae"))
       {
         vowelCount -= 1;

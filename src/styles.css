@@ -1,3 +1,9 @@
 body {
   background-color: lightyellow;
 }
+#haiku{
+  display: none;
+}
+#vowelCount{
+  display: none;
+}
