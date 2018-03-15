@@ -1,3 +1,4 @@
+
 export class Haiku{
 
   constructor(lineOne, lineTwo, lineThree){
@@ -9,9 +10,16 @@ export class Haiku{
   syllableCounter(line)
   {
     let vowelCount = 0;
+    let i = 0;
+    console.log(line);
+    console.log(line.length);
     line.forEach(function(word)
     {
+      console.log("ITERATION" + i);
+      i++;
+      console.log(word);
       let charArray = word.split("");
+      console.log(charArray);
       charArray.forEach(function(char)
       {
         if (char == "a" || char == "e" || char == "i" || char == "o" || char == "u" || char == "y" )
@@ -176,6 +184,20 @@ export class Haiku{
         vowelCount += 1;
       }
     });
+    console.log("I HAVE RETURNED "+ line);
     return vowelCount;
+  }
+
+    RandomWordGenerator(syllableTotal){
+    let randomWords = require('random-words');
+    let newWord = randomWords({exactly: 1, maxLength: 15});
+    let word = newWord;
+console.log("THE RANDOM WORD IN HAIKUjs IS" + word);
+    while(this.syllableCounter(word) < syllableTotal)
+    {
+      word += " " + (randomWords({exactly: 1, maxLength: 15}));
+      console.log("WORD HAS CHANGED TO " + word);
+    }
+    return word;
   }
 }

@@ -5,6 +5,7 @@ import $ from 'jquery';
 import {Haiku} from './../js/haiku.js';
 
 $(document).ready(function() {
+  let randomWords = require('random-words');
   $("#haiku-form").submit(function(event){
     event.preventDefault();
     let lineOne = $("#lineOne").val();
@@ -22,6 +23,14 @@ $(document).ready(function() {
       $("#haiku").show();
     }
 
+    $("#createHaiku").click(function()
+    {
+      $("#generateLineOne").text(newHaiku.RandomWordGenerator(5));
+      $("#generateLineTwo").text(newHaiku.RandomWordGenerator(7));
+      $("#generateLineThree").text(newHaiku.RandomWordGenerator(5));
+      $("#haikuGenerator").show();
+    });
+
     $(".reset").click(function()
     {
       $("#lineOne").val("");
@@ -29,6 +38,10 @@ $(document).ready(function() {
       $("#lineThree").val("");
       $("#haiku").hide();
       $("#vowelCount").hide();
+      $("#haikuGenerator").hide();
     });
   });
+
+
+
 });

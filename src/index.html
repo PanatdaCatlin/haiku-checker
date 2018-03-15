@@ -16,18 +16,29 @@
       <br>
       <label for="lineThree">Enter line 3:</label>
       <input id="lineThree" type="text">
-      <button type="submit">Submit</button>
+      <br>
+      <button type="submit" class="btn-info">Criticize my Haiku!</button>
+
     </form>
     <p id="haiku">Hurray, you created a BEAUTIFUL Haiku!!!!!
       <br>
-      <button type="submit" class="reset">Create a new Haiku</button></p>
+      <button type="submit" class=" btn-danger reset">Create a new Haiku</button></p>
       <p id="vowelCount"> I'm sorry, your vowel count is not correct for a haiku. A haiku contains 5 syllables in line one, 7 syllables in line two and 5 syllables in line three. Your creation included:
         <br>
         Line One: <span id="lineOneTotal"></span> <br>
         Line Two: <span id="lineTwoTotal"></span> <br>
         Line Three: <span id="lineThreeTotal"></span>
         <br>
-        <button type="button" class="reset">Try again</button>
+        <button type="button" class="btn-danger reset">Try again</button>
+          <button type="button" class="btn-info" id="createHaiku">Create one for me.</button>
+      </p>
+
+      <p id="haikuGenerator"> The most precious Haiku you will read:
+        <br>
+        Line One: <span id="generateLineOne"></span> <br>
+        Line Two: <span id="generateLineTwo"></span> <br>
+        Line Three: <span id="generateLineThree"></span>
+        <br>
       </p>
 
     </div>
