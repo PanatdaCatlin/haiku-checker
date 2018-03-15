@@ -1,4 +1,3 @@
-
 export class Haiku{
 
   constructor(lineOne, lineTwo, lineThree){
@@ -15,16 +14,16 @@ export class Haiku{
       let charArray = word.split("");
       charArray.forEach(function(char)
       {
-      if (char == "a" || char == "e" || char == "i" || char == "o" || char == "u" || char == "y" )
-      {
-        vowelCount += 1;
-      }
-    });
-      if(word.endsWith("e"))
+        if (char == "a" || char == "e" || char == "i" || char == "o" || char == "u" || char == "y" )
+        {
+          vowelCount += 1;
+        }
+      });
+      if(word.endsWith("e") || word.endsWith("es"))
       {
         vowelCount -= 1;
       }
-      if(word.endsWith("ee"))
+      if(word.endsWith("ee") || word.endsWith("ii"))
       {
         vowelCount += 1;
       }
@@ -172,11 +171,11 @@ export class Haiku{
       {
         vowelCount -= 1;
       }
-      if(word == "the" || word == "eye")
+      if(word == "the" || word == "eye" || word == "eyes")
       {
         vowelCount += 1;
       }
-  });
-  return vowelCount;
+    });
+    return vowelCount;
   }
 }
