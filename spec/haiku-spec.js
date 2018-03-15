@@ -1,11 +1,18 @@
 import {Haiku} from './../js/haiku.js';
 
-describe('arrayConvert', function(){
-  it ('should test that input is converted to array', function(){
+describe('arrayConvertWord', function(){
+  it ('should test that line is converted to array', function(){
     let firstHaiku = new Haiku("how are you today", "The day is great and pretty", "well thats good to hear");
-    console.log(firstHaiku);
-    expect(firstHaiku.lineOne).toEqual(['h','o','w',' ','a','r','e',' ','y','o','u',' ','t','o','d','a','y']);
-    expect(firstHaiku.lineTwo).toEqual([ 'T', 'h', 'e', ' ', 'd', 'a', 'y', ' ', 'i', 's', ' ', 'g', 'r', 'e', 'a', 't', ' ', 'a', 'n', 'd', ' ', 'p', 'r', 'e', 't', 't', 'y' ]);
-    expect(firstHaiku.lineThree).toEqual([ 'w', 'e', 'l', 'l', ' ', 't', 'h', 'a', 't', 's', ' ', 'g', 'o', 'o', 'd', ' ', 't', 'o', ' ', 'h', 'e', 'a', 'r' ]);
+    expect(firstHaiku.lineOne).toEqual(['how','are','you','today']);
+    expect(firstHaiku.lineTwo).toEqual(['the', 'day', 'is', 'great', 'and', 'pretty']);
+    expect(firstHaiku.lineThree).toEqual(['well', 'thats', 'good', 'to', 'hear']);
+  });
+});
+describe('arrayConvertChar', function(){
+  it ('should test that word is converted to array', function(){
+    let firstHaiku = new Haiku("how are you today", "The day is great and pretty", "well thats good to hear");
+    expect(firstHaiku.syllableCounter(firstHaiku.lineOne)).toEqual(5);
+    expect(firstHaiku.syllableCounter(firstHaiku.lineTwo)).toEqual(7);
+    expect(firstHaiku.syllableCounter(firstHaiku.lineThree)).toEqual(5);
   });
 });
